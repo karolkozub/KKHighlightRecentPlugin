@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F98B19CC1A0455F6001AA37A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98B19CB1A0455F6001AA37A /* AppKit.framework */; };
+		F98B19CE1A0455F6001AA37A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98B19CD1A0455F6001AA37A /* Foundation.framework */; };
+		F98B19D31A0455F6001AA37A /* KKHighlightRecentPlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = F98B19D21A0455F6001AA37A /* KKHighlightRecentPlugin.xcscheme */; };
+		F98B19D61A0455F6001AA37A /* KKHighlightRecentPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B19D51A0455F6001AA37A /* KKHighlightRecentPlugin.m */; };
+		F99D03C91A0C7CDF003F3685 /* KKFileUsageCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = F99D03C81A0C7CDF003F3685 /* KKFileUsageCounter.m */; };
+		F99D03CC1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F98B19C81A0455F6001AA37A /* KKHighlightRecentPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKHighlightRecentPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		F98B19CB1A0455F6001AA37A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		F98B19CD1A0455F6001AA37A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		F98B19D11A0455F6001AA37A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F98B19D21A0455F6001AA37A /* KKHighlightRecentPlugin.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = KKHighlightRecentPlugin.xcscheme; path = KKHighlightRecentPlugin.xcodeproj/xcshareddata/xcschemes/KKHighlightRecentPlugin.xcscheme; sourceTree = SOURCE_ROOT; };
+		F98B19D41A0455F6001AA37A /* KKHighlightRecentPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHighlightRecentPlugin.h; sourceTree = "<group>"; };
+		F98B19D51A0455F6001AA37A /* KKHighlightRecentPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHighlightRecentPlugin.m; sourceTree = "<group>"; };
+		F99D03C71A0C7CDF003F3685 /* KKFileUsageCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFileUsageCounter.h; sourceTree = "<group>"; };
+		F99D03C81A0C7CDF003F3685 /* KKFileUsageCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFileUsageCounter.m; sourceTree = "<group>"; };
+		F99D03CA1A0C7D55003F3685 /* KKNavigatorItemHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigatorItemHighlighter.h; sourceTree = "<group>"; };
+		F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNavigatorItemHighlighter.m; sourceTree = "<group>"; };
+		F9CD181C1A0B0993002066B2 /* DVTDocumentLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTDocumentLocation.h; sourceTree = "<group>"; };
+		F9CD1A371A0B0995002066B2 /* DVTImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTImageAndTextCell.h; sourceTree = "<group>"; };
+		F9CD1B081A0B0996002066B2 /* DVTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTTheme.h; sourceTree = "<group>"; };
+		F9CD27BC1A0B099F002066B2 /* _IDENavigatorOutlineViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _IDENavigatorOutlineViewDataSource.h; sourceTree = "<group>"; };
+		F9CD2C411A0B09A6002066B2 /* IDEWorkspaceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEWorkspaceWindowController.h; sourceTree = "<group>"; };
+		F9F697351A0CA83F0058A7E7 /* DVTEditor-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTEditor-Protocol.h"; sourceTree = "<group>"; };
+		F9F697361A0CA83F0058A7E7 /* DVTInvalidation-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTInvalidation-Protocol.h"; sourceTree = "<group>"; };
+		F9F697371A0CA83F0058A7E7 /* DVTSimpleSerialization-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTSimpleSerialization-Protocol.h"; sourceTree = "<group>"; };
+		F9F697381A0CA83F0058A7E7 /* DVTStatefulObject-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTStatefulObject-Protocol.h"; sourceTree = "<group>"; };
+		F9F697391A0CA83F0058A7E7 /* DVTTabbedWindowControlling-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTTabbedWindowControlling-Protocol.h"; sourceTree = "<group>"; };
+		F9F6973A1A0CA83F0058A7E7 /* IDEEditorAreaContainer-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDEEditorAreaContainer-Protocol.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F98B19C61A0455F6001AA37A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F98B19CC1A0455F6001AA37A /* AppKit.framework in Frameworks */,
+				F98B19CE1A0455F6001AA37A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F98B19BF1A0455F6001AA37A = {
+			isa = PBXGroup;
+			children = (
+				F9CD0C921A0B0987002066B2 /* Xcode-RuntimeHeaders */,
+				F98B19CF1A0455F6001AA37A /* KKHighlightRecentPlugin */,
+				F98B19CA1A0455F6001AA37A /* Frameworks */,
+				F98B19C91A0455F6001AA37A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F98B19C91A0455F6001AA37A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F98B19C81A0455F6001AA37A /* KKHighlightRecentPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F98B19CA1A0455F6001AA37A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F98B19CB1A0455F6001AA37A /* AppKit.framework */,
+				F98B19CD1A0455F6001AA37A /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F98B19CF1A0455F6001AA37A /* KKHighlightRecentPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				F98B19D41A0455F6001AA37A /* KKHighlightRecentPlugin.h */,
+				F98B19D51A0455F6001AA37A /* KKHighlightRecentPlugin.m */,
+				F99D03C71A0C7CDF003F3685 /* KKFileUsageCounter.h */,
+				F99D03C81A0C7CDF003F3685 /* KKFileUsageCounter.m */,
+				F99D03CA1A0C7D55003F3685 /* KKNavigatorItemHighlighter.h */,
+				F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */,
+				F98B19D01A0455F6001AA37A /* Supporting Files */,
+			);
+			path = KKHighlightRecentPlugin;
+			sourceTree = "<group>";
+		};
+		F98B19D01A0455F6001AA37A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F98B19D11A0455F6001AA37A /* Info.plist */,
+				F98B19D21A0455F6001AA37A /* KKHighlightRecentPlugin.xcscheme */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9CD0C921A0B0987002066B2 /* Xcode-RuntimeHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				F9F697351A0CA83F0058A7E7 /* DVTEditor-Protocol.h */,
+				F9F697361A0CA83F0058A7E7 /* DVTInvalidation-Protocol.h */,
+				F9F697371A0CA83F0058A7E7 /* DVTSimpleSerialization-Protocol.h */,
+				F9F697381A0CA83F0058A7E7 /* DVTStatefulObject-Protocol.h */,
+				F9F697391A0CA83F0058A7E7 /* DVTTabbedWindowControlling-Protocol.h */,
+				F9F6973A1A0CA83F0058A7E7 /* IDEEditorAreaContainer-Protocol.h */,
+				F9CD2C411A0B09A6002066B2 /* IDEWorkspaceWindowController.h */,
+				F9CD181C1A0B0993002066B2 /* DVTDocumentLocation.h */,
+				F9CD1B081A0B0996002066B2 /* DVTTheme.h */,
+				F9CD1A371A0B0995002066B2 /* DVTImageAndTextCell.h */,
+				F9CD27BC1A0B099F002066B2 /* _IDENavigatorOutlineViewDataSource.h */,
+			);
+			path = "Xcode-RuntimeHeaders";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F98B19C71A0455F6001AA37A /* KKHighlightRecentPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F98B19D91A0455F6001AA37A /* Build configuration list for PBXNativeTarget "KKHighlightRecentPlugin" */;
+			buildPhases = (
+				F98B19C41A0455F6001AA37A /* Sources */,
+				F98B19C51A0455F6001AA37A /* Resources */,
+				F98B19C61A0455F6001AA37A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KKHighlightRecentPlugin;
+			productName = KKHighlightRecentPlugin;
+			productReference = F98B19C81A0455F6001AA37A /* KKHighlightRecentPlugin.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F98B19C01A0455F6001AA37A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Karol Kozub";
+				TargetAttributes = {
+					F98B19C71A0455F6001AA37A = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = F98B19C31A0455F6001AA37A /* Build configuration list for PBXProject "KKHighlightRecentPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F98B19BF1A0455F6001AA37A;
+			productRefGroup = F98B19C91A0455F6001AA37A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F98B19C71A0455F6001AA37A /* KKHighlightRecentPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F98B19C51A0455F6001AA37A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F98B19D31A0455F6001AA37A /* KKHighlightRecentPlugin.xcscheme in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F98B19C41A0455F6001AA37A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F99D03CC1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m in Sources */,
+				F99D03C91A0C7CDF003F3685 /* KKFileUsageCounter.m in Sources */,
+				F98B19D61A0455F6001AA37A /* KKHighlightRecentPlugin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F98B19D71A0455F6001AA37A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		F98B19D81A0455F6001AA37A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+			};
+			name = Release;
+		};
+		F98B19DA1A0455F6001AA37A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = KKHighlightRecentPlugin/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		F98B19DB1A0455F6001AA37A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				INFOPLIST_FILE = KKHighlightRecentPlugin/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F98B19C31A0455F6001AA37A /* Build configuration list for PBXProject "KKHighlightRecentPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F98B19D71A0455F6001AA37A /* Debug */,
+				F98B19D81A0455F6001AA37A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F98B19D91A0455F6001AA37A /* Build configuration list for PBXNativeTarget "KKHighlightRecentPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F98B19DA1A0455F6001AA37A /* Debug */,
+				F98B19DB1A0455F6001AA37A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F98B19C01A0455F6001AA37A /* Project object */;
+}
