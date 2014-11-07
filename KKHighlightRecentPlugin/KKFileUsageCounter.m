@@ -43,8 +43,8 @@ static NSString * const kFileTransitionNotificationNextFileKey = @"next";
 {
     self.highlightsForFileURLs = [NSMutableDictionary new];
     self.focusedFileURL = nil;
-    self.increment = 0.02;
-    self.decayFactor = 0.95;
+    self.increment = 0.002;
+    self.decayFactor = 0.999;
     self.highlightRemovalThreshold = 0.001;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fileTransitionNotification:) name:kFileTransitionNotificationName object:nil];
