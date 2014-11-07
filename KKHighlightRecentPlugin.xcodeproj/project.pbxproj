@@ -27,6 +27,10 @@
 		F99D03C81A0C7CDF003F3685 /* KKFileUsageCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFileUsageCounter.m; sourceTree = "<group>"; };
 		F99D03CA1A0C7D55003F3685 /* KKNavigatorItemHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigatorItemHighlighter.h; sourceTree = "<group>"; };
 		F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNavigatorItemHighlighter.m; sourceTree = "<group>"; };
+		F9B13F5D1A0D84A90053E53B /* IDENavigatorOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDENavigatorOutlineView.h; sourceTree = "<group>"; };
+		F9B13F5E1A0D873A0053E53B /* DVTOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTOutlineView.h; sourceTree = "<group>"; };
+		F9B13F5F1A0D875E0053E53B /* DVTProgressIndicatorProvidingView-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTProgressIndicatorProvidingView-Protocol.h"; sourceTree = "<group>"; };
+		F9B13F601A0D87F20053E53B /* IDENavigatorOutlineViewLoadingDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDENavigatorOutlineViewLoadingDelegate-Protocol.h"; sourceTree = "<group>"; };
 		F9CD181C1A0B0993002066B2 /* DVTDocumentLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTDocumentLocation.h; sourceTree = "<group>"; };
 		F9CD1A371A0B0995002066B2 /* DVTImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTImageAndTextCell.h; sourceTree = "<group>"; };
 		F9CD1B081A0B0996002066B2 /* DVTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTTheme.h; sourceTree = "<group>"; };
@@ -117,6 +121,10 @@
 				F9CD1B081A0B0996002066B2 /* DVTTheme.h */,
 				F9CD1A371A0B0995002066B2 /* DVTImageAndTextCell.h */,
 				F9CD27BC1A0B099F002066B2 /* _IDENavigatorOutlineViewDataSource.h */,
+				F9B13F5D1A0D84A90053E53B /* IDENavigatorOutlineView.h */,
+				F9B13F5E1A0D873A0053E53B /* DVTOutlineView.h */,
+				F9B13F5F1A0D875E0053E53B /* DVTProgressIndicatorProvidingView-Protocol.h */,
+				F9B13F601A0D87F20053E53B /* IDENavigatorOutlineViewLoadingDelegate-Protocol.h */,
 			);
 			path = "Xcode-RuntimeHeaders";
 			sourceTree = "<group>";

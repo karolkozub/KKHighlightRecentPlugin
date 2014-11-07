@@ -25,7 +25,7 @@
     [[KKNavigatorItemHighlighter sharedInstance] setup];
     [[KKNavigatorItemHighlighter sharedInstance] setDataSource:[KKFileUsageCounter sharedInstance]];
     
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(update) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
 }
 
 + (void)update

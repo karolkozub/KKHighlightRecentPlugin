@@ -9,6 +9,7 @@
 #import "KKNavigatorItemHighlighter.h"
 #import "DVTTheme.h"
 #import "DVTImageAndTextCell.h"
+#import "IDENavigatorOutlineView.h"
 #import "_IDENavigatorOutlineViewDataSource.h"
 #import <objc/runtime.h>
 #import <Cocoa/Cocoa.h>
@@ -17,6 +18,12 @@
 static NSColor *sHighlightedItemStrokeColor;
 static NSColor *sHighlightedItemBackgroundColor;
 
+
+@interface KKNavigatorItemHighlighter ()
+
+@property (nonatomic, strong) NSMapTable *highlightedItemsForOutlineViews;
+
+@end
 
 @interface DVTTheme (KKHighlightRecentPlugin)
 
@@ -45,6 +52,19 @@ static NSColor *sHighlightedItemBackgroundColor;
     return sharedInstance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.highlightedItemsForOutlineViews = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsWeakMemory
+                                                                         valueOptions:NSPointerFunctionsStrongMemory
+                                                                             capacity:0];
+    }
+    
+    return self;
+}
+
 - (void)setup
 {
     [DVTTheme kk_swizzleMethods];
@@ -53,6 +73,29 @@ static NSColor *sHighlightedItemBackgroundColor;
 
 - (void)update
 {
+    for (IDENavigatorOutlineView *outlineView in self.highlightedItemsForOutlineViews.keyEnumerator) {
+        NSMutableSet *highlightedItems = [self.highlightedItemsForOutlineViews objectForKey:outlineView];
+        
+        for (IDENavigableItem *item in [highlightedItems copy]) {
+            double highlightForItem = [self.dataSource navigatorItemHighlighter:self highlightForItem:item];
+            
+            [outlineView reloadItem:item];
+
+            if (highlightForItem <= 0) {
+                [highlightedItems removeObject:item];
+            }
+        }
+    }
+}
+
+- (void)outlineView:(IDENavigatorOutlineView *)outlineView didHighlightItem:(IDENavigableItem *)item
+{
+    if (![self.highlightedItemsForOutlineViews objectForKey:outlineView]) {
+        [self.highlightedItemsForOutlineViews setObject:[NSMutableSet set] forKey:outlineView];
+    }
+    
+    NSMutableSet *highlightedItems = [self.highlightedItemsForOutlineViews objectForKey:outlineView];
+    [highlightedItems addObject:item];
 }
 
 - (double)highlightForItem:(IDENavigableItem *)item
@@ -104,7 +147,7 @@ static NSColor *sHighlightedItemBackgroundColor;
 
 @implementation _IDENavigatorOutlineViewDataSource (KKHighlightRecentPlugin)
 
-- (void)kk_outlineView:(id)outlineView willDisplayCell:(DVTImageAndTextCell *)cell forTableColumn:(id)column item:(IDENavigableItem *)item
+- (void)kk_outlineView:(id)outlineView willDisplayCell:(DVTImageAndTextCell *)cell forTableColumn:(id)column item:(id)item
 {
     double highlightForItem = [[KKNavigatorItemHighlighter sharedInstance] highlightForItem:item];
     
@@ -120,6 +163,8 @@ static NSColor *sHighlightedItemBackgroundColor;
         cell.drawsEmphasizeMarker = !cell.isHighlighted;
         sHighlightedItemStrokeColor = color;
         sHighlightedItemBackgroundColor = color;
+        
+        [[KKNavigatorItemHighlighter sharedInstance] outlineView:self.outlineView didHighlightItem:item];
     }
 }
 
