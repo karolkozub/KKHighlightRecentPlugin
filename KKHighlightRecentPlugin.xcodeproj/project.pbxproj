@@ -24,11 +24,11 @@
 		F98B19D51A0455F6001AA37A /* KKHighlightRecentPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHighlightRecentPlugin.m; sourceTree = "<group>"; };
 		F9970CD81A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KKSwizzleMethods.h"; sourceTree = "<group>"; };
 		F9970CD91A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KKSwizzleMethods.m"; sourceTree = "<group>"; };
-		F9970CDB1A0F096300D3EFC4 /* KKXcodeRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KKXcodeRuntime.h; path = "../Xcode-RuntimeHeaders/KKXcodeRuntime.h"; sourceTree = "<group>"; };
 		F99D03C71A0C7CDF003F3685 /* KKFileUsageCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFileUsageCounter.h; sourceTree = "<group>"; };
 		F99D03C81A0C7CDF003F3685 /* KKFileUsageCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFileUsageCounter.m; sourceTree = "<group>"; };
 		F99D03CA1A0C7D55003F3685 /* KKNavigatorItemHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigatorItemHighlighter.h; sourceTree = "<group>"; };
 		F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNavigatorItemHighlighter.m; sourceTree = "<group>"; };
+		F9D242E71A0F1EC600462749 /* KKXcodeRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKXcodeRuntime.h; sourceTree = "<group>"; };
 		F9DC876E1A0DD83A004ADE76 /* KKNavigatorItemHighlighterDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigatorItemHighlighterDataSource.h; sourceTree = "<group>"; };
 		F9DC876F1A0DD888004ADE76 /* KKFileUsageCounterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFileUsageCounterDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +81,7 @@
 				F9DC876E1A0DD83A004ADE76 /* KKNavigatorItemHighlighterDataSource.h */,
 				F99D03CA1A0C7D55003F3685 /* KKNavigatorItemHighlighter.h */,
 				F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */,
-				F9970CDB1A0F096300D3EFC4 /* KKXcodeRuntime.h */,
+				F9D242E71A0F1EC600462749 /* KKXcodeRuntime.h */,
 				F9970CD81A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.h */,
 				F9970CD91A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.m */,
 				F98B19D01A0455F6001AA37A /* Supporting Files */,
