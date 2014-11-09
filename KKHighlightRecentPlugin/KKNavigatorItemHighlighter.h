@@ -7,24 +7,15 @@
 //
 
 #import <AppKit/AppKit.h>
+#import "KKNavigatorItemHighlighterDataSource.h"
+#import "KKFileUsageCounterDelegate.h"
 
 
-@class KKNavigatorItemHighlighter, IDENavigableItem;
-
-
-@protocol KKNavigatorItemHighlighterDataSource <NSObject>
-
-- (double)navigatorItemHighlighter:(KKNavigatorItemHighlighter *)navigatorItemHighlighter highlightForItem:(IDENavigableItem *)item;
-
-@end
-
-
-@interface KKNavigatorItemHighlighter : NSObject
+@interface KKNavigatorItemHighlighter : NSObject<KKFileUsageCounterDelegate>
 
 @property (nonatomic, weak) id<KKNavigatorItemHighlighterDataSource> dataSource;
 
 + (instancetype)sharedInstance;
 - (void)setup;
-- (void)update;
 
 @end

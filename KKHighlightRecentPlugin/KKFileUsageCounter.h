@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "KKNavigatorItemHighlighter.h"
+#import "KKFileUsageCounterDelegate.h"
+
 
 @interface KKFileUsageCounter : NSObject <KKNavigatorItemHighlighterDataSource>
 
+@property (nonatomic, weak) id<KKFileUsageCounterDelegate> delegate;
+
 + (instancetype)sharedInstance;
 - (void)setup;
-- (void)update;
+- (void)start;
 
 @end

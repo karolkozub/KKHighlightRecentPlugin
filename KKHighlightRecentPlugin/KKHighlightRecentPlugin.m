@@ -16,22 +16,15 @@
 
 + (void)pluginDidLoad:(NSBundle *)bundle
 {
-    [self setup];
-}
-
-+ (void)setup
-{
-    [[KKFileUsageCounter sharedInstance] setup];
-    [[KKNavigatorItemHighlighter sharedInstance] setup];
-    [[KKNavigatorItemHighlighter sharedInstance] setDataSource:[KKFileUsageCounter sharedInstance]];
+    KKFileUsageCounter *fileUsageCounter = [KKFileUsageCounter sharedInstance];
+    KKNavigatorItemHighlighter *navigatorItemHighlighter = [KKNavigatorItemHighlighter sharedInstance];
     
-    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
-}
-
-+ (void)update
-{
-    [[KKFileUsageCounter sharedInstance] update];
-    [[KKNavigatorItemHighlighter sharedInstance] update];
+    [fileUsageCounter setup];
+    [navigatorItemHighlighter setup];
+    [fileUsageCounter setDelegate:navigatorItemHighlighter];
+    [navigatorItemHighlighter setDataSource:fileUsageCounter];
+    
+    [fileUsageCounter start];
 }
 
 @end

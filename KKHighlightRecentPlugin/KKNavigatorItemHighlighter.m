@@ -21,7 +21,8 @@ static NSColor *sHighlightedItemBackgroundColor;
 
 @interface KKNavigatorItemHighlighter ()
 
-@property (nonatomic, strong) NSMapTable *highlightedItemsForOutlineViews;
+@property (nonatomic, strong) NSMapTable *highlightedItemsForUrls;
+@property (nonatomic, weak) IDENavigatorOutlineView *outlineView;
 
 @end
 
@@ -57,9 +58,7 @@ static NSColor *sHighlightedItemBackgroundColor;
     self = [super init];
     
     if (self) {
-        self.highlightedItemsForOutlineViews = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsWeakMemory
-                                                                         valueOptions:NSPointerFunctionsStrongMemory
-                                                                             capacity:0];
+        self.highlightedItemsForUrls = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsStrongMemory valueOptions:NSPointerFunctionsWeakMemory];
     }
     
     return self;
@@ -71,36 +70,34 @@ static NSColor *sHighlightedItemBackgroundColor;
     [_IDENavigatorOutlineViewDataSource kk_swizzleMethods];
 }
 
-- (void)update
+- (double)highlightForFileUrl:(NSURL *)fileUrl
 {
-    for (IDENavigatorOutlineView *outlineView in self.highlightedItemsForOutlineViews.keyEnumerator) {
-        NSMutableSet *highlightedItems = [self.highlightedItemsForOutlineViews objectForKey:outlineView];
-        
-        for (IDENavigableItem *item in [highlightedItems copy]) {
-            double highlightForItem = [self.dataSource navigatorItemHighlighter:self highlightForItem:item];
-            
-            [outlineView reloadItem:item];
-
-            if (highlightForItem <= 0) {
-                [highlightedItems removeObject:item];
-            }
-        }
-    }
+    return [self.dataSource navigatorItemHighlighter:self highlightForFileUrl:fileUrl];
 }
 
-- (void)outlineView:(IDENavigatorOutlineView *)outlineView didHighlightItem:(IDENavigableItem *)item
+#pragma mark - API for _IDENavigatorOutlineViewDataSource
+
+- (void)outlineView:(IDENavigatorOutlineView *)outlineView didHighlightItem:(IDENavigableItem *)item withFileUrl:(NSURL *)fileUrl
 {
-    if (![self.highlightedItemsForOutlineViews objectForKey:outlineView]) {
-        [self.highlightedItemsForOutlineViews setObject:[NSMutableSet set] forKey:outlineView];
-    }
+    [self setOutlineView:outlineView];
+    [self.highlightedItemsForUrls setObject:item forKey:fileUrl];
+}
+
+- (void)outlineView:(IDENavigatorOutlineView *)outlineView didUnhighlightItem:(IDENavigableItem *)item withFileUrl:(NSURL *)fileUrl
+{
+    [self setOutlineView:outlineView];
+    [self.highlightedItemsForUrls removeObjectForKey:fileUrl];
+}
+
+#pragma mark - KKFileUsageCounterDelegate
+
+- (void)fileUsageCounter:(KKFileUsageCounter *)fileUsageCounter didUpdateHighlightForFileUrl:(NSURL *)fileUrl
+{
+    id item = [self.highlightedItemsForUrls objectForKey:fileUrl];
     
-    NSMutableSet *highlightedItems = [self.highlightedItemsForOutlineViews objectForKey:outlineView];
-    [highlightedItems addObject:item];
-}
-
-- (double)highlightForItem:(IDENavigableItem *)item
-{
-    return [self.dataSource navigatorItemHighlighter:self highlightForItem:item];
+    if (item) {
+        [self.outlineView reloadItem:item];
+    }
 }
 
 @end
@@ -110,16 +107,15 @@ static NSColor *sHighlightedItemBackgroundColor;
 
 - (NSColor *)kk_greenEmphasisBoxStrokeColor
 {
-    NSColor *color = sHighlightedItemStrokeColor ?: [self kk_greenEmphasisBoxStrokeColor];
+    NSColor *color = sHighlightedItemStrokeColor ?: [NSColor clearColor];
     
     sHighlightedItemStrokeColor = nil;
     
-    return color;
-}
+    return color;}
 
 - (NSColor *)kk_greenEmphasisBoxBackgroundColor
 {
-    NSColor *color = sHighlightedItemBackgroundColor ?: [self kk_greenEmphasisBoxBackgroundColor];
+    NSColor *color = sHighlightedItemBackgroundColor ?: [NSColor clearColor];
     
     sHighlightedItemBackgroundColor = nil;
     
@@ -147,24 +143,33 @@ static NSColor *sHighlightedItemBackgroundColor;
 
 @implementation _IDENavigatorOutlineViewDataSource (KKHighlightRecentPlugin)
 
-- (void)kk_outlineView:(id)outlineView willDisplayCell:(DVTImageAndTextCell *)cell forTableColumn:(id)column item:(id)item
+- (void)kk_outlineView:(id)outlineView willDisplayCell:(id)cell forTableColumn:(id)column item:(id)item
 {
-    double highlightForItem = [[KKNavigatorItemHighlighter sharedInstance] highlightForItem:item];
-    
-    if ([cell isKindOfClass:[DVTImageAndTextCell class]]) {
-        cell.drawsEmphasizeMarker = NO;
-    }
-    
     [self kk_outlineView:outlineView willDisplayCell:cell forTableColumn:column item:item];
     
-    if ([cell isKindOfClass:[DVTImageAndTextCell class]] && highlightForItem > 0 && !cell.drawsEmphasizeMarker) {
+    BOOL cellCannotBeHighlighted = ![cell respondsToSelector:@selector(setDrawsEmphasizeMarker:)];
+    BOOL itemDoesNotRepresentAFile = ![item respondsToSelector:@selector(fileURL)];
+    
+    if (cellCannotBeHighlighted || itemDoesNotRepresentAFile) {
+        return;
+    }
+    
+    BOOL outlineViewIsFocused = [[outlineView window] isMainWindow];
+    BOOL cellIsNotSelected = ![cell isHighlighted];
+    NSURL *fileUrl = [item fileURL];
+    double highlightForItem = [[KKNavigatorItemHighlighter sharedInstance] highlightForFileUrl:fileUrl];
+    
+    if (outlineViewIsFocused && cellIsNotSelected && highlightForItem > 0) {
         NSColor *color = [[NSColor yellowColor] colorWithAlphaComponent:highlightForItem];
         
-        cell.drawsEmphasizeMarker = !cell.isHighlighted;
         sHighlightedItemStrokeColor = color;
         sHighlightedItemBackgroundColor = color;
         
-        [[KKNavigatorItemHighlighter sharedInstance] outlineView:self.outlineView didHighlightItem:item];
+        [cell setDrawsEmphasizeMarker:YES];
+        [[KKNavigatorItemHighlighter sharedInstance] outlineView:self.outlineView didHighlightItem:item withFileUrl:fileUrl];
+    
+    } else {
+        [[KKNavigatorItemHighlighter sharedInstance] outlineView:self.outlineView didUnhighlightItem:item withFileUrl:fileUrl];
     }
 }
 

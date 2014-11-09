@@ -36,6 +36,26 @@
 		F9CD1B081A0B0996002066B2 /* DVTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTTheme.h; sourceTree = "<group>"; };
 		F9CD27BC1A0B099F002066B2 /* _IDENavigatorOutlineViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _IDENavigatorOutlineViewDataSource.h; sourceTree = "<group>"; };
 		F9CD2C411A0B09A6002066B2 /* IDEWorkspaceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEWorkspaceWindowController.h; sourceTree = "<group>"; };
+		F9DC875C1A0DD306004ADE76 /* IDEEditorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEEditorContext.h; sourceTree = "<group>"; };
+		F9DC875D1A0DD3DF004ADE76 /* IDEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDEViewController.h; sourceTree = "<group>"; };
+		F9DC875E1A0DD3FC004ADE76 /* DVTFindBarHostable-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTFindBarHostable-Protocol.h"; sourceTree = "<group>"; };
+		F9DC875F1A0DD41E004ADE76 /* DVTFindBarFindable-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTFindBarFindable-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87601A0DD457004ADE76 /* IDESelectionSource-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDESelectionSource-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87611A0DD472004ADE76 /* DVTScopeBarHost-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTScopeBarHost-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87621A0DD47F004ADE76 /* DVTStateRepositoryDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTStateRepositoryDelegate-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87631A0DD493004ADE76 /* IDEEditorContextProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDEEditorContextProtocol-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87641A0DD4A2004ADE76 /* IDEEditorDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDEEditorDelegate-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87651A0DD4D6004ADE76 /* DVTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVTViewController.h; sourceTree = "<group>"; };
+		F9DC87661A0DD4EC004ADE76 /* DVTControllerContentViewViewControllerAdditions-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTControllerContentViewViewControllerAdditions-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87671A0DD524004ADE76 /* IDEEditorSplittingControllerDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDEEditorSplittingControllerDelegate-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87681A0DD533004ADE76 /* IDENavigableItemCoordinatorDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDENavigableItemCoordinatorDelegate-Protocol.h"; sourceTree = "<group>"; };
+		F9DC87691A0DD542004ADE76 /* IDEPathCellDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDEPathCellDelegate-Protocol.h"; sourceTree = "<group>"; };
+		F9DC876A1A0DD59B004ADE76 /* DVTCancellable-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTCancellable-Protocol.h"; sourceTree = "<group>"; };
+		F9DC876B1A0DD5B2004ADE76 /* IDEEditorContextDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDEEditorContextDelegate-Protocol.h"; sourceTree = "<group>"; };
+		F9DC876C1A0DD602004ADE76 /* IDEWorkspaceDocumentProvider-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IDEWorkspaceDocumentProvider-Protocol.h"; sourceTree = "<group>"; };
+		F9DC876E1A0DD83A004ADE76 /* KKNavigatorItemHighlighterDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigatorItemHighlighterDataSource.h; sourceTree = "<group>"; };
+		F9DC876F1A0DD888004ADE76 /* KKFileUsageCounterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFileUsageCounterDelegate.h; sourceTree = "<group>"; };
+		F9DC87701A0DDA62004ADE76 /* IDENavigableItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDENavigableItem.h; sourceTree = "<group>"; };
 		F9F697351A0CA83F0058A7E7 /* DVTEditor-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTEditor-Protocol.h"; sourceTree = "<group>"; };
 		F9F697361A0CA83F0058A7E7 /* DVTInvalidation-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTInvalidation-Protocol.h"; sourceTree = "<group>"; };
 		F9F697371A0CA83F0058A7E7 /* DVTSimpleSerialization-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTSimpleSerialization-Protocol.h"; sourceTree = "<group>"; };
@@ -89,8 +109,10 @@
 			children = (
 				F98B19D41A0455F6001AA37A /* KKHighlightRecentPlugin.h */,
 				F98B19D51A0455F6001AA37A /* KKHighlightRecentPlugin.m */,
+				F9DC876F1A0DD888004ADE76 /* KKFileUsageCounterDelegate.h */,
 				F99D03C71A0C7CDF003F3685 /* KKFileUsageCounter.h */,
 				F99D03C81A0C7CDF003F3685 /* KKFileUsageCounter.m */,
+				F9DC876E1A0DD83A004ADE76 /* KKNavigatorItemHighlighterDataSource.h */,
 				F99D03CA1A0C7D55003F3685 /* KKNavigatorItemHighlighter.h */,
 				F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */,
 				F98B19D01A0455F6001AA37A /* Supporting Files */,
@@ -125,6 +147,24 @@
 				F9B13F5E1A0D873A0053E53B /* DVTOutlineView.h */,
 				F9B13F5F1A0D875E0053E53B /* DVTProgressIndicatorProvidingView-Protocol.h */,
 				F9B13F601A0D87F20053E53B /* IDENavigatorOutlineViewLoadingDelegate-Protocol.h */,
+				F9DC875C1A0DD306004ADE76 /* IDEEditorContext.h */,
+				F9DC875D1A0DD3DF004ADE76 /* IDEViewController.h */,
+				F9DC87651A0DD4D6004ADE76 /* DVTViewController.h */,
+				F9DC87601A0DD457004ADE76 /* IDESelectionSource-Protocol.h */,
+				F9DC875E1A0DD3FC004ADE76 /* DVTFindBarHostable-Protocol.h */,
+				F9DC875F1A0DD41E004ADE76 /* DVTFindBarFindable-Protocol.h */,
+				F9DC87611A0DD472004ADE76 /* DVTScopeBarHost-Protocol.h */,
+				F9DC87621A0DD47F004ADE76 /* DVTStateRepositoryDelegate-Protocol.h */,
+				F9DC87631A0DD493004ADE76 /* IDEEditorContextProtocol-Protocol.h */,
+				F9DC87641A0DD4A2004ADE76 /* IDEEditorDelegate-Protocol.h */,
+				F9DC87661A0DD4EC004ADE76 /* DVTControllerContentViewViewControllerAdditions-Protocol.h */,
+				F9DC87681A0DD533004ADE76 /* IDENavigableItemCoordinatorDelegate-Protocol.h */,
+				F9DC87671A0DD524004ADE76 /* IDEEditorSplittingControllerDelegate-Protocol.h */,
+				F9DC87691A0DD542004ADE76 /* IDEPathCellDelegate-Protocol.h */,
+				F9DC876A1A0DD59B004ADE76 /* DVTCancellable-Protocol.h */,
+				F9DC876B1A0DD5B2004ADE76 /* IDEEditorContextDelegate-Protocol.h */,
+				F9DC876C1A0DD602004ADE76 /* IDEWorkspaceDocumentProvider-Protocol.h */,
+				F9DC87701A0DDA62004ADE76 /* IDENavigableItem.h */,
 			);
 			path = "Xcode-RuntimeHeaders";
 			sourceTree = "<group>";
