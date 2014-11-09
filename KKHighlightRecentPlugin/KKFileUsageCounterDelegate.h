@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Karol Kozub. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
 
 
 @class KKFileUsageCounter, IDENavigableItem;

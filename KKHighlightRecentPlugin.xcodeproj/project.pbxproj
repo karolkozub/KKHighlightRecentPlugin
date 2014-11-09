@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F98B19CC1A0455F6001AA37A /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98B19CB1A0455F6001AA37A /* AppKit.framework */; };
-		F98B19CE1A0455F6001AA37A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F98B19CD1A0455F6001AA37A /* Foundation.framework */; };
 		F98B19D31A0455F6001AA37A /* KKHighlightRecentPlugin.xcscheme in Resources */ = {isa = PBXBuildFile; fileRef = F98B19D21A0455F6001AA37A /* KKHighlightRecentPlugin.xcscheme */; };
 		F98B19D61A0455F6001AA37A /* KKHighlightRecentPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F98B19D51A0455F6001AA37A /* KKHighlightRecentPlugin.m */; };
+		F9970CDA1A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = F9970CD91A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.m */; };
 		F99D03C91A0C7CDF003F3685 /* KKFileUsageCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = F99D03C81A0C7CDF003F3685 /* KKFileUsageCounter.m */; };
 		F99D03CC1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m in Sources */ = {isa = PBXBuildFile; fileRef = F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */; };
 /* End PBXBuildFile section */
@@ -18,11 +18,12 @@
 /* Begin PBXFileReference section */
 		F98B19C81A0455F6001AA37A /* KKHighlightRecentPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKHighlightRecentPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98B19CB1A0455F6001AA37A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		F98B19CD1A0455F6001AA37A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		F98B19D11A0455F6001AA37A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F98B19D21A0455F6001AA37A /* KKHighlightRecentPlugin.xcscheme */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = KKHighlightRecentPlugin.xcscheme; path = KKHighlightRecentPlugin.xcodeproj/xcshareddata/xcschemes/KKHighlightRecentPlugin.xcscheme; sourceTree = SOURCE_ROOT; };
 		F98B19D41A0455F6001AA37A /* KKHighlightRecentPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKHighlightRecentPlugin.h; sourceTree = "<group>"; };
 		F98B19D51A0455F6001AA37A /* KKHighlightRecentPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKHighlightRecentPlugin.m; sourceTree = "<group>"; };
+		F9970CD81A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KKSwizzleMethods.h"; sourceTree = "<group>"; };
+		F9970CD91A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KKSwizzleMethods.m"; sourceTree = "<group>"; };
 		F99D03C71A0C7CDF003F3685 /* KKFileUsageCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKFileUsageCounter.h; sourceTree = "<group>"; };
 		F99D03C81A0C7CDF003F3685 /* KKFileUsageCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKFileUsageCounter.m; sourceTree = "<group>"; };
 		F99D03CA1A0C7D55003F3685 /* KKNavigatorItemHighlighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigatorItemHighlighter.h; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98B19CC1A0455F6001AA37A /* AppKit.framework in Frameworks */,
-				F98B19CE1A0455F6001AA37A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				F98B19CB1A0455F6001AA37A /* AppKit.framework */,
-				F98B19CD1A0455F6001AA37A /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +114,8 @@
 				F9DC876E1A0DD83A004ADE76 /* KKNavigatorItemHighlighterDataSource.h */,
 				F99D03CA1A0C7D55003F3685 /* KKNavigatorItemHighlighter.h */,
 				F99D03CB1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m */,
+				F9970CD81A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.h */,
+				F9970CD91A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.m */,
 				F98B19D01A0455F6001AA37A /* Supporting Files */,
 			);
 			path = KKHighlightRecentPlugin;
@@ -239,6 +240,7 @@
 				F99D03CC1A0C7D55003F3685 /* KKNavigatorItemHighlighter.m in Sources */,
 				F99D03C91A0C7CDF003F3685 /* KKFileUsageCounter.m in Sources */,
 				F98B19D61A0455F6001AA37A /* KKHighlightRecentPlugin.m in Sources */,
+				F9970CDA1A0EF70000D3EFC4 /* NSObject+KKSwizzleMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

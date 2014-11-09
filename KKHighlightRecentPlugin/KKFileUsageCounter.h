@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Karol Kozub. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "KKNavigatorItemHighlighter.h"
+#import <AppKit/AppKit.h>
+#import "KKNavigatorItemHighlighterDataSource.h"
 #import "KKFileUsageCounterDelegate.h"
 
 
@@ -16,7 +16,6 @@
 @property (nonatomic, weak) id<KKFileUsageCounterDelegate> delegate;
 
 + (instancetype)sharedInstance;
-- (void)setup;
 - (void)start;
 
 @end

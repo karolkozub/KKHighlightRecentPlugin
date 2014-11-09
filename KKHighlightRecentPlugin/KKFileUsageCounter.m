@@ -10,14 +10,7 @@
 #import "DVTDocumentLocation.h"
 #import "IDEEditorContext.h"
 #import "IDENavigableItem.h"
-#import <objc/runtime.h>
-
-
-@interface IDEEditorContext (KKHighlightRecentPlugin)
-
-+ (void)kk_swizzleMethods;
-
-@end
+#import "NSObject+KKSwizzleMethods.h"
 
 
 @interface KKFileUsageCounter ()
@@ -62,11 +55,6 @@
     }
     
     return self;
-}
-
-- (void)setup
-{
-    [IDEEditorContext kk_swizzleMethods];
 }
 
 - (void)start
@@ -121,7 +109,9 @@
 
 - (double)navigatorItemHighlighter:(KKNavigatorItemHighlighter *)navigatorItemHighlighter highlightForFileUrl:(NSURL *)fileUrl
 {
-    return [self roundedHighlightForHighlight:[self.highlightsForFileUrls[fileUrl] doubleValue]];
+    double highlight = [self.highlightsForFileUrls[fileUrl] doubleValue];
+    
+    return [self roundedHighlightForHighlight:highlight];
 }
 
 @end
@@ -129,25 +119,19 @@
 
 @implementation IDEEditorContext (KKHighlightRecentPlugin)
 
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [IDEEditorContext kk_swizzleMethodWithOriginalSelector:@selector(_openNavigableItem:documentExtension:document:shouldInstallEditorBlock:)];
+    });
+}
+
 - (int)kk__openNavigableItem:(id)item documentExtension:(id)documentExtension document:(id)document shouldInstallEditorBlock:(id)block
 {
     [[KKFileUsageCounter sharedInstance] editorContext:self didOpenItem:item];
     
     return [self kk__openNavigableItem:item documentExtension:documentExtension document:document shouldInstallEditorBlock:block];
-}
-
-+ (void)kk_swizzleMethods
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        SEL originalSelector = @selector(_openNavigableItem:documentExtension:document:shouldInstallEditorBlock:);
-        SEL swizzledSelector = @selector(kk__openNavigableItem:documentExtension:document:shouldInstallEditorBlock:);
-        
-        Method originalMethod = class_getInstanceMethod([self class], originalSelector);
-        Method swizzledMethod = class_getInstanceMethod([self class], swizzledSelector);
-        
-        method_exchangeImplementations(originalMethod, swizzledMethod);
-    });
 }
 
 @end

@@ -16,6 +16,5 @@
 @property (nonatomic, weak) id<KKNavigatorItemHighlighterDataSource> dataSource;
 
 + (instancetype)sharedInstance;
-- (void)setup;
 
 @end

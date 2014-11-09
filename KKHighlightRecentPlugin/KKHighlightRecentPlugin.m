@@ -19,8 +19,6 @@
     KKFileUsageCounter *fileUsageCounter = [KKFileUsageCounter sharedInstance];
     KKNavigatorItemHighlighter *navigatorItemHighlighter = [KKNavigatorItemHighlighter sharedInstance];
     
-    [fileUsageCounter setup];
-    [navigatorItemHighlighter setup];
     [fileUsageCounter setDelegate:navigatorItemHighlighter];
     [navigatorItemHighlighter setDataSource:fileUsageCounter];
     
