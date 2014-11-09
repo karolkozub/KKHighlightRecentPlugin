@@ -9,3 +9,4 @@ Although it seems to work reliably, it hasn't been thoroughly tested yet. I'm al
 
 To draw the highlight this plugin completely hijacks the `drawsEmphasizeMarker` functionality of `DVTImageAndTextCell`s which doesn't seem to be ever used by Xcode itself, but may be used by some other plugins. Specifically it swizzles the `DVTTheme`s `greenEmphasisBox*Color` methods, making them return `[NSColor clearColor]` by default, so any other emphasis boxes will probably not be visible, at least not to human eyes.
 
+Use [Alcatraz](http://alcatraz.io/) to intall/uninstall.
