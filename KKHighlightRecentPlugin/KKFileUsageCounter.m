@@ -7,9 +7,7 @@
 //
 
 #import "KKFileUsageCounter.h"
-#import "DVTDocumentLocation.h"
-#import "IDEEditorContext.h"
-#import "IDENavigableItem.h"
+#import "KKXcodeRuntime.h"
 #import "NSObject+KKSwizzleMethods.h"
 
 

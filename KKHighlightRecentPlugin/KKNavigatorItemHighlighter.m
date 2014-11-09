@@ -7,10 +7,7 @@
 //
 
 #import "KKNavigatorItemHighlighter.h"
-#import "DVTTheme.h"
-#import "DVTImageAndTextCell.h"
-#import "IDENavigatorOutlineView.h"
-#import "_IDENavigatorOutlineViewDataSource.h"
+#import "KKXcodeRuntime.h"
 #import "NSObject+KKSwizzleMethods.h"
 
 
@@ -21,7 +18,7 @@ static NSColor *sHighlightedItemBackgroundColor;
 @interface KKNavigatorItemHighlighter ()
 
 @property (nonatomic, strong) NSMapTable *highlightedItemsForUrls;
-@property (nonatomic, weak) IDENavigatorOutlineView *outlineView;
+@property (nonatomic, weak) NSOutlineView *outlineView;
 
 @end
 
@@ -58,13 +55,13 @@ static NSColor *sHighlightedItemBackgroundColor;
     return [self.dataSource navigatorItemHighlighter:self highlightForFileUrl:fileUrl];
 }
 
-- (void)outlineView:(IDENavigatorOutlineView *)outlineView didHighlightItem:(IDENavigableItem *)item withFileUrl:(NSURL *)fileUrl
+- (void)outlineView:(NSOutlineView *)outlineView didHighlightItem:(IDENavigableItem *)item withFileUrl:(NSURL *)fileUrl
 {
     [self setOutlineView:outlineView];
     [self.highlightedItemsForUrls setObject:item forKey:fileUrl];
 }
 
-- (void)outlineView:(IDENavigatorOutlineView *)outlineView didUnhighlightItem:(IDENavigableItem *)item withFileUrl:(NSURL *)fileUrl
+- (void)outlineView:(NSOutlineView *)outlineView didUnhighlightItem:(IDENavigableItem *)item withFileUrl:(NSURL *)fileUrl
 {
     [self setOutlineView:outlineView];
     [self.highlightedItemsForUrls removeObjectForKey:fileUrl];
@@ -149,10 +146,10 @@ static NSColor *sHighlightedItemBackgroundColor;
         sHighlightedItemBackgroundColor = color;
         
         [cell setDrawsEmphasizeMarker:YES];
-        [[KKNavigatorItemHighlighter sharedInstance] outlineView:self.outlineView didHighlightItem:item withFileUrl:fileUrl];
+        [[KKNavigatorItemHighlighter sharedInstance] outlineView:outlineView didHighlightItem:item withFileUrl:fileUrl];
     
     } else {
-        [[KKNavigatorItemHighlighter sharedInstance] outlineView:self.outlineView didUnhighlightItem:item withFileUrl:fileUrl];
+        [[KKNavigatorItemHighlighter sharedInstance] outlineView:outlineView didUnhighlightItem:item withFileUrl:fileUrl];
     }
 }
 

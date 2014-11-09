@@ -11,7 +11,7 @@
 #import "KKFileUsageCounterDelegate.h"
 
 
-@interface KKFileUsageCounter : NSObject <KKNavigatorItemHighlighterDataSource>
+@interface KKFileUsageCounter : NSObject<KKNavigatorItemHighlighterDataSource>
 
 @property (nonatomic, weak) id<KKFileUsageCounterDelegate> delegate;
 

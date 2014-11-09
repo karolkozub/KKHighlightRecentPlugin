@@ -9,7 +9,6 @@
 #import "KKHighlightRecentPlugin.h"
 #import "KKFileUsageCounter.h"
 #import "KKNavigatorItemHighlighter.h"
-#import "IDEWorkspaceWindowController.h"
 
 
 @implementation KKHighlightRecentPlugin
