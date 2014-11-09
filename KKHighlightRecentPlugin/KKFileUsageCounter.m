@@ -19,7 +19,6 @@
 @property (nonatomic, strong) NSURL *focusedFileUrl;
 @property (nonatomic, assign) double focusedFileHighlightIncrement;
 @property (nonatomic, assign) double highlightDecayFactor;
-@property (nonatomic, assign) double highlightRemovalThreshold;
 @property (nonatomic, assign) double highlightPrecision;
 @property (nonatomic, assign) NSTimeInterval updateInterval;
 
@@ -47,10 +46,9 @@
     if (self) {
         self.highlightsForFileUrls = [NSMutableDictionary dictionary];
         self.focusedFileUrl = nil;
-        self.focusedFileHighlightIncrement = 0.001;
-        self.highlightDecayFactor = 0.999;
+        self.focusedFileHighlightIncrement = 0.0002;
+        self.highlightDecayFactor = 0.9999;
         self.highlightPrecision = 0.05;
-        self.highlightRemovalThreshold = 0.01;
         self.updateInterval = 0.1;
     }
     
@@ -69,7 +67,7 @@
         double increment = [fileUrl isEqual:self.focusedFileUrl] ? self.focusedFileHighlightIncrement : 0;
         double updatedHighlight = (highlight + increment) * self.highlightDecayFactor;
         
-        if ([self roundedHighlightForHighlight:updatedHighlight] < self.highlightRemovalThreshold) {
+        if ([self roundedHighlightForHighlight:updatedHighlight] < self.highlightPrecision) {
             [self.highlightsForFileUrls removeObjectForKey:fileUrl];
             
         } else {
@@ -89,7 +87,7 @@
 
 - (double)roundedHighlightForHighlight:(double)highlight
 {
-    return MAX(0, MIN(1, ceil(highlight / self.highlightPrecision) * self.highlightPrecision));
+    return MAX(0, MIN(1, floor(highlight / self.highlightPrecision) * self.highlightPrecision));
 }
 
 #pragma mark - API for IDEEditorContext
@@ -100,7 +98,7 @@
         self.focusedFileUrl = [item fileURL];
 
         if (self.focusedFileUrl && ![self.highlightsForFileUrls objectForKey:self.focusedFileUrl]) {
-            [self.highlightsForFileUrls setObject:@(self.highlightRemovalThreshold) forKey:self.focusedFileUrl];
+            [self.highlightsForFileUrls setObject:@(self.highlightPrecision) forKey:self.focusedFileUrl];
         }
     }
 }
