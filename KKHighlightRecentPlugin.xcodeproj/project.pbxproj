@@ -52,7 +52,9 @@
 				F98B19CA1A0455F6001AA37A /* Frameworks */,
 				F98B19C91A0455F6001AA37A /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		F98B19C91A0455F6001AA37A /* Products */ = {
 			isa = PBXGroup;
