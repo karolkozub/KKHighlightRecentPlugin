@@ -94,7 +94,7 @@ static NSColor *sHighlightedItemBackgroundColor;
 
 - (NSColor *)kk_greenEmphasisBoxStrokeColor
 {
-    NSColor *color = sHighlightedItemStrokeColor ?: [NSColor clearColor];
+    NSColor *color = sHighlightedItemStrokeColor ?: [self kk_greenEmphasisBoxStrokeColor];
     
     sHighlightedItemStrokeColor = nil;
     
@@ -103,7 +103,7 @@ static NSColor *sHighlightedItemBackgroundColor;
 
 - (NSColor *)kk_greenEmphasisBoxBackgroundColor
 {
-    NSColor *color = sHighlightedItemBackgroundColor ?: [NSColor clearColor];
+    NSColor *color = sHighlightedItemBackgroundColor ?: [self kk_greenEmphasisBoxBackgroundColor];
     
     sHighlightedItemBackgroundColor = nil;
     
@@ -149,6 +149,7 @@ static NSColor *sHighlightedItemBackgroundColor;
         [[KKNavigatorItemHighlighter sharedInstance] outlineView:outlineView didHighlightItem:item withFileUrl:fileUrl];
     
     } else {
+        [cell setDrawsEmphasizeMarker:NO];
         [[KKNavigatorItemHighlighter sharedInstance] outlineView:outlineView didUnhighlightItem:item withFileUrl:fileUrl];
     }
 }
