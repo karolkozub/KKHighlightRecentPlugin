@@ -1,6 +1,14 @@
 KKHighlightRecentPlugin
 =======================
 
+Important
+---------
+
+The plugin doesn't work with Xcode 7 or higher due to changes in the way highlighting is implemented there.
+
+Description
+-----------
+
 This plugin subtly highlights recently selected files. For each file the highlight increases when it's selected, and decreases when it's not. This way the most highlighted files are the ones that were edited the longest and the most recenly.
 
 ![Screenshot](https://raw.githubusercontent.com/karolkozub/KKHighlightRecentPlugin/master/screenshot.png)
